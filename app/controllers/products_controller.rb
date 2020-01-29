@@ -1,12 +1,12 @@
 class ProductsController < ApplicationController
 
     def index
-        @products = cart
+        @cart = cart
     end
 
-    def add 
-        @product = params[:name]
-        session[:cart] << @product
+    def add  
+        cart << product_params
+        render :index
     end
 
     private
