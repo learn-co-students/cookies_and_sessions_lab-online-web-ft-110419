@@ -1,12 +1,13 @@
-<h1> Product Index (root)</h1>
-
-
-
 
 <form method="POST"  action= "/products" >
     <input type="text" id="product" placeholder="Enter product name" name="product[name]"></input>
     <input type="submit" id="add to cart">
 </form>
+
+
+<% session[:cart].each do |product| %>
+    <%= product %>
+<% end %>
 
 
 
