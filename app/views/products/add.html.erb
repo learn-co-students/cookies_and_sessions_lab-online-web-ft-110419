@@ -1,0 +1,14 @@
+<h1>Product#add</h1>
+
+<%= form_tag '/' do %>
+
+    <div class="field">
+        <label for=""> Product </label>
+        <%= text_field_tag :product %>
+    </div>
+    
+    <%= submit_tag 'add to cart' %>
+<% end %>
+<br>
+
+<%= session[:cart].last %>
