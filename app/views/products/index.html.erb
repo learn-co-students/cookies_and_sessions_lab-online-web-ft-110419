@@ -1,0 +1,17 @@
+<% if @cart %>
+<h2>Items In Your Cart:</h2>
+<ol>
+	<% @cart.each do |item| %>
+		<li><p><%= item %></p></li>
+	<% end %>
+</ol>
+<%else%>
+	<h2>There Are No Items In Your Cart</h2>
+<% end %>
+
+<h2> Add a New Item:</h2>
+
+<%= form_tag "/products", method: :post %>
+<p><%= label_tag :item_name, "Item You Want to Add to Your Cart:" %></p>
+<%= text_area_tag :item_name, nil, :placeholder =>"Item Name" %>
+<p><%= submit_tag "Add To Cart" %></p>
