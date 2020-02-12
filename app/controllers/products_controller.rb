@@ -1,13 +1,14 @@
 class ProductsController < ApplicationController 
 
     def index 
-        @items = ["apple", "chicken", "rice"]
+        
     end 
 
     def add 
-        @product = Product.find(params[:id])
+        @product = params[:product]
         cart = session[:cart] || []
-        cart << @product.id
+        cart << @product
+        session[:cart] = cart
     end
     
 end

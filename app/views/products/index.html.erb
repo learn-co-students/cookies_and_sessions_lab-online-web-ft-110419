@@ -1,5 +1,13 @@
 <h1>product</h1>
-    <%= @items.each do |item| %>
-    <div>Products: <%= item %></div> <br>
+<ul>
+    <li>
+      Items:  <%= session[:cart] %></h2>
+    </li>
+</ul>
+
+    <%= form_tag({controller: 'products', action: "add" , method: 'post'}) do %>
+        <%= label_tag 'product' %>
+         <%= text_field_tag 'product' %>
+        <%= submit_tag 'add to cart' %>
     <% end %>
        
