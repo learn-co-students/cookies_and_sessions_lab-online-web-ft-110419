@@ -1,16 +1,12 @@
 class ProductsController < ApplicationController
     def index
-        session[:cart] = cart
-        @cart = session[:cart]
-      end
+      cart
+    end
     
-      def add
-        if params[:product]
-          session[:cart] << params[:product]
-        end
-        @cart = session[:cart]
-        redirect_to '/'
-      end
+    def add
+      cart << params[:product]
+      render :index
+    end
 
     #Create a Products controller with two actions, index and add.
   end
